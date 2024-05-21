@@ -190,9 +190,13 @@ class BinaryDataPacket extends ResultRow {
         var value = buffer.readInt16();
         log.fine('Value: $value');
         return value;
-      case FIELD_TYPE_STRING:
-        log.fine('STRING');
-        var value = buffer.readLengthCodedString();
+      case FIELD_TYPE_BINARY:
+        log.fine('Binary');
+        var len = buffer.readLengthCodedBinary();
+        if (len == null) {
+          return null;
+        }
+        var value = buffer.readList(len);
         log.fine('Value: $value');
         return value;
       case FIELD_TYPE_VAR_STRING:

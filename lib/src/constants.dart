@@ -110,7 +110,7 @@ const int FIELD_TYPE_MEDIUM_BLOB = 0xfa;
 const int FIELD_TYPE_LONG_BLOB = 0xfb;
 const int FIELD_TYPE_BLOB = 0xfc;
 const int FIELD_TYPE_VAR_STRING = 0xfd;
-const int FIELD_TYPE_STRING = 0xfe;
+const int FIELD_TYPE_BINARY = 0xfe;
 const int FIELD_TYPE_GEOMETRY = 0xff;
 
 const int NOT_NULL_FLAG = 0x0001;
